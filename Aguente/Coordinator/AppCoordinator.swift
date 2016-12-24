@@ -35,7 +35,9 @@ class AppCoordinator {
         let errorMessage = "We could not find a card for code \(unknownCode)"
 
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            (self.navigation.viewControllers.first as? ReaderViewController)?.viewWillAppear(false)
+        }))
 
         navigation.present(alertController, animated: true, completion: nil)
     }

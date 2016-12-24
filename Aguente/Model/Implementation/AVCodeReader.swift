@@ -43,6 +43,7 @@ extension AVCodeReader: AVCaptureMetadataOutputObjectsDelegate {
 
         //Vibrate the phone
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        stopReading()
 
         didRead?(code)
     }
