@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UmE-wb-Mhp">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reader-->
+        <scene sceneID="nH7-gu-Wzn">
+            <objects>
+                <viewController storyboardIdentifier="ReaderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dSm-wY-lI0" customClass="ReaderViewController" customModule="Aguente" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IiU-3g-Evi"/>
+                        <viewControllerLayoutGuide type="bottom" id="xh6-kS-aKz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Jz-QO-kPu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-RO-Y9W">
+                                <rect key="frame" x="32" y="124" width="256" height="256"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.40000000000000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wog-RO-Y9W" secondAttribute="height" multiplier="1:1" id="Ayz-D6-5KA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Center the QR code in the area below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQf-0b-Dbl">
+                                <rect key="frame" x="17" y="95" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.050980392159999999" green="0.20392156859999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wog-RO-Y9W" firstAttribute="height" secondItem="0Jz-QO-kPu" secondAttribute="height" multiplier="0.8" id="EVd-Ri-kkl"/>
+                            <constraint firstItem="Wog-RO-Y9W" firstAttribute="top" secondItem="jQf-0b-Dbl" secondAttribute="bottom" constant="8" id="PXI-oe-uM2"/>
+                            <constraint firstItem="Wog-RO-Y9W" firstAttribute="centerX" secondItem="0Jz-QO-kPu" secondAttribute="centerX" id="jHu-OQ-lLY"/>
+                            <constraint firstItem="Wog-RO-Y9W" firstAttribute="width" secondItem="0Jz-QO-kPu" secondAttribute="width" multiplier="0.8" id="owC-Rm-DsK"/>
+                            <constraint firstItem="jQf-0b-Dbl" firstAttribute="centerX" secondItem="0Jz-QO-kPu" secondAttribute="centerX" id="qkQ-N5-U3z"/>
+                            <constraint firstItem="Wog-RO-Y9W" firstAttribute="centerY" secondItem="0Jz-QO-kPu" secondAttribute="centerY" id="zYP-gx-xD9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jQf-0b-Dbl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="qkQ-N5-U3z"/>
+                                <exclude reference="EVd-Ri-kkl"/>
+                                <exclude reference="PXI-oe-uM2"/>
+                                <exclude reference="owC-Rm-DsK"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="EVd-Ri-kkl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="jQf-0b-Dbl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="qkQ-N5-U3z"/>
+                                <include reference="PXI-oe-uM2"/>
+                                <include reference="owC-Rm-DsK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reader" id="CRq-DK-fKm"/>
+                    <connections>
+                        <outlet property="videoPreview" destination="Wog-RO-Y9W" id="c1n-vR-ox4"/>
+                        <segue destination="Hcd-7d-jFd" kind="show" identifier="ReaderToCard" id="AV2-2I-npv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t13-rN-2dm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="165.48913043478262"/>
+        </scene>
+        <!--Card-->
+        <scene sceneID="gf0-Ya-4dh">
+            <objects>
+                <viewController storyboardIdentifier="CardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hcd-7d-jFd" customClass="CardViewController" customModule="Aguente" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3UZ-qw-W92"/>
+                        <viewControllerLayoutGuide type="bottom" id="PlT-4X-EzK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SZ5-R5-iyJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tris" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-Kz-M1C">
+                                <rect key="frame" x="71.5" y="8" width="232" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fhb-Kz-M1C" secondAttribute="height" multiplier="232:275" id="hhm-Yg-nIk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triss Merigold" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9r-hM-Frh">
+                                <rect key="frame" x="28" y="291" width="275.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-sF-1ru">
+                                <rect key="frame" x="28" y="332" width="275.5" height="61"/>
+                                <string key="text">Remove 4 strength from 1 opposing unit(s).
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font: http://www.gwentdb.com/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kai-v3-TJd">
+                                <rect key="frame" x="179" y="474" width="125" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.20392156862745098" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fhb-Kz-M1C" firstAttribute="height" relation="lessThanOrEqual" secondItem="SZ5-R5-iyJ" secondAttribute="height" multiplier="0.95" id="0fZ-sF-YZq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kai-v3-TJd" secondAttribute="trailing" id="1QJ-1y-vxV"/>
+                            <constraint firstItem="nUT-sF-1ru" firstAttribute="trailing" secondItem="o9r-hM-Frh" secondAttribute="trailing" id="8Ts-bw-gy1"/>
+                            <constraint firstItem="o9r-hM-Frh" firstAttribute="trailing" secondItem="fhb-Kz-M1C" secondAttribute="trailing" id="DN6-nm-DRT"/>
+                            <constraint firstItem="o9r-hM-Frh" firstAttribute="top" secondItem="3UZ-qw-W92" secondAttribute="bottom" constant="41" id="GkY-bY-cbJ"/>
+                            <constraint firstItem="o9r-hM-Frh" firstAttribute="leading" secondItem="fhb-Kz-M1C" secondAttribute="trailing" constant="8" id="IdB-e3-HJG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fhb-Kz-M1C" secondAttribute="trailing" constant="0.5" id="JCU-iX-ss9"/>
+                            <constraint firstItem="o9r-hM-Frh" firstAttribute="top" secondItem="fhb-Kz-M1C" secondAttribute="bottom" constant="8" id="M1x-9F-0NP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fhb-Kz-M1C" secondAttribute="leading" id="PFp-9S-ah7"/>
+                            <constraint firstItem="nUT-sF-1ru" firstAttribute="leading" secondItem="o9r-hM-Frh" secondAttribute="leading" id="RAv-gm-eiu"/>
+                            <constraint firstItem="PlT-4X-EzK" firstAttribute="top" secondItem="Kai-v3-TJd" secondAttribute="bottom" constant="20" id="Rah-Nc-Fl3"/>
+                            <constraint firstItem="nUT-sF-1ru" firstAttribute="top" secondItem="o9r-hM-Frh" secondAttribute="bottom" constant="7.5" id="Rr1-Ww-sag"/>
+                            <constraint firstItem="fhb-Kz-M1C" firstAttribute="top" secondItem="3UZ-qw-W92" secondAttribute="bottom" constant="8" id="ay0-5H-dj4"/>
+                            <constraint firstItem="o9r-hM-Frh" firstAttribute="leading" secondItem="SZ5-R5-iyJ" secondAttribute="leadingMargin" constant="12" id="b4w-v7-c8S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o9r-hM-Frh" secondAttribute="trailing" constant="8" id="yeh-wb-aAJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JCU-iX-ss9"/>
+                                <exclude reference="PFp-9S-ah7"/>
+                                <exclude reference="DN6-nm-DRT"/>
+                                <exclude reference="GkY-bY-cbJ"/>
+                                <exclude reference="IdB-e3-HJG"/>
+                                <exclude reference="M1x-9F-0NP"/>
+                                <exclude reference="b4w-v7-c8S"/>
+                                <exclude reference="yeh-wb-aAJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="JCU-iX-ss9"/>
+                                <include reference="PFp-9S-ah7"/>
+                                <include reference="GkY-bY-cbJ"/>
+                                <include reference="IdB-e3-HJG"/>
+                                <include reference="yeh-wb-aAJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="JCU-iX-ss9"/>
+                                <include reference="DN6-nm-DRT"/>
+                                <include reference="M1x-9F-0NP"/>
+                                <include reference="b4w-v7-c8S"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card" id="eTk-eI-QTT"/>
+                    <connections>
+                        <outlet property="cardDescription" destination="nUT-sF-1ru" id="Srg-II-hXC"/>
+                        <outlet property="cardImage" destination="fhb-Kz-M1C" id="ZoN-o7-Jgx"/>
+                        <outlet property="cardTitle" destination="o9r-hM-Frh" id="Db3-nf-IfY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2kf-Wm-mH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="167"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qib-Dm-Af0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UmE-wb-Mhp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="ear-r6-Fs5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.32549019607843138" green="0.1803921568627451" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dSm-wY-lI0" kind="relationship" relationship="rootViewController" id="aCA-pv-Op2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cep-eR-ES6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="167"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tris" width="220" height="275"/>
+    </resources>
+</document>
