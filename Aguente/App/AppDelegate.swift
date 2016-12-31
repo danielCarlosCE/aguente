@@ -4,11 +4,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let appCoordinator = AppCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow()
-        window?.rootViewController = AppCoordinator().rootViewController
+        window?.rootViewController = appCoordinator.rootViewController
         window?.makeKeyAndVisible()
 
         setupStyle()

@@ -23,8 +23,8 @@ class ReaderViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        codeReader.startReading { (code) in
-            self.fetchCard(for: code)
+        codeReader.startReading { [weak self] (code) in
+            self?.fetchCard(for: code)
         }
     }
 
@@ -39,12 +39,12 @@ class ReaderViewController: UIViewController {
 extension ReaderViewController {
 
     func fetchCard(for code: String) {
-        dataSource.card(for: code) { card in
+        dataSource.card(for: code) { [weak self] card in
             guard let card = card else {
-                self.didReadUnknownCode?(code)
+                self?.didReadUnknownCode?(code)
                 return
             }
-            self.didFindCard?(card)
+            self?.didFindCard?(card)
         }
     }
 

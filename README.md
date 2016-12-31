@@ -1,6 +1,10 @@
 # The App
 This is a simple app to scan QR Codes. The main goal here is to show how to write a QR code reader without adding one more responsibility to our *ViewController*. 
 
+#UI
+
+![reader](Images/views.png)
+
 #Medium post
 
 [How to write decoupled code to scan QR Codes](https://medium.com/p/)
