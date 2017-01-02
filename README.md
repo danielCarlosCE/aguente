@@ -7,7 +7,7 @@ This is a simple app to scan QR Codes. The main goal here is to show how to writ
 
 #Medium post
 
-[How to write decoupled code to scan QR Codes](https://medium.com/@danielcarlosce/how-to-properly-write-a-viewcontroller-that-scans-qr-codes-6f22ab2d2e99#.6ndtiul2t)
+[How to properly write a ViewController that scans QR Codes](https://medium.com/@danielcarlosce/how-to-properly-write-a-viewcontroller-that-scans-qr-codes-6f22ab2d2e99#.6ndtiul2t)
 
 # Codes for test
 We are using a mock data source and we have four codes that will be recognized by the application:
