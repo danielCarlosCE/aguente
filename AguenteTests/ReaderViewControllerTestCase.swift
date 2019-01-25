@@ -9,7 +9,7 @@ class ReaderViewControllerTestCase: XCTestCase {
     override func setUp() {
         super.setUp()
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        readerVC = mainStoryboard.instantiateViewController(withIdentifier: "ReaderViewController") as! ReaderViewController
+        readerVC = mainStoryboard.instantiateViewController(withIdentifier: "ReaderViewController") as? ReaderViewController
 
         readerVC.dataSource = MockDataSource()
         readerVC.codeReader = mockReader

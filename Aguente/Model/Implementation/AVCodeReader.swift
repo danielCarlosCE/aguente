@@ -10,10 +10,12 @@ class AVCodeReader: NSObject {
         super.init()
 
         //Make sure the device can handle video
-        guard let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo),
+        guard let videoDevice = AVCaptureDevice.default(for: .video),
               let deviceInput = try? AVCaptureDeviceInput(device: videoDevice) else {
             return
         }
+
+        //session
         captureSession = AVCaptureSession()
 
         //input
@@ -24,18 +26,20 @@ class AVCodeReader: NSObject {
         captureSession?.addOutput(captureMetadataOutput)
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         //interprets qr codes only
-        captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        captureMetadataOutput.metadataObjectTypes = [.qr]
 
         //preview
-        let captureVideoPreview = AVCaptureVideoPreviewLayer(session: captureSession)!
-        captureVideoPreview.videoGravity = AVLayerVideoGravityResizeAspectFill
+        guard let captureSession = captureSession else { return }
+        let captureVideoPreview = AVCaptureVideoPreviewLayer(session: captureSession)
+        captureVideoPreview.videoGravity = .resizeAspectFill
         self.videoPreview = captureVideoPreview
     }
 }
 
 extension AVCodeReader: AVCaptureMetadataOutputObjectsDelegate {
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!,
-                       from connection: AVCaptureConnection!) {
+    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput,
+                        didOutput metadataObjects: [AVMetadataObject],
+                        from connection: AVCaptureConnection) {
         guard let readableCode = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
               let code = readableCode.stringValue else {
              return
