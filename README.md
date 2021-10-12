@@ -5,7 +5,7 @@ This is a simple app to scan QR Codes. The main goal here is to show how to writ
 
 ![reader](Images/views.png)
 
-#Medium post
+### Medium post
 
 [How to properly write a ViewController that scans QR Codes](https://medium.com/@danielcarlosce/how-to-properly-write-a-viewcontroller-that-scans-qr-codes-6f22ab2d2e99#.6ndtiul2t)
 
